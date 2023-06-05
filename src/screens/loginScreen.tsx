@@ -4,8 +4,10 @@ import { Auth } from '../core/fireBase';
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import * as Notifications from 'expo-notifications';
 import { registerForPushNotificationsAsync } from '../core/push-permissions';
+import { NativeStackScreenProps } from "@react-navigation/native-stack"
+import { RootStackParamList } from '../core/types';
 
-export default function LoginScreen({ navigation }) {
+export default function LoginScreen({ navigation }: NativeStackScreenProps<RootStackParamList>) {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 

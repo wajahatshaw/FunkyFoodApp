@@ -1,0 +1,12 @@
+# Node.js dependencies
+node_modules/
+
+# Xcode generated files
+ios/Pods/
+ios/DerivedData/
+
+# Android generated files
+android/build/
+android/app/build/
+package-lock.json
+.env

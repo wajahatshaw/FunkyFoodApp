@@ -4,12 +4,15 @@ import { StyleSheet, Text, View, TouchableOpacity, Button } from 'react-native';
 import { useDispatch, useSelector } from "react-redux";
 import { incremented, decremented } from '../redux/counter/counterSlices';
 import { Auth } from '../core/fireBase';
+import { createUserWithEmailAndPassword } from "firebase/auth";
+import { RootState } from '../redux/store';
+import { RootStackParamList } from '../core/types';
+import { NativeStackScreenProps } from "@react-navigation/native-stack"
 
-import {  createUserWithEmailAndPassword } from "firebase/auth";
-
-export default function HomeScreen({ navigation }) {
+export default function HomeScreen({ navigation }: NativeStackScreenProps<RootStackParamList>) {
     const dispatch = useDispatch();
-    const counter = useSelector(state => state.counter.value);
+    // const counter = useSelector(state => state.counter.value);
+    const counter = useSelector((state: RootState) => state.counter.value);
 
     useEffect(() => {
         // Example function for signing in with Google
